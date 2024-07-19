@@ -1,0 +1,115 @@
+#fruit{
+    font-size: 50px;
+    text-align: center;
+    margin: 30px 0;
+}
+.fruit-area{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 3%;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.fruit-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 220px;
+    height: auto;
+    box-shadow: 3px 4px 3px 4px rgb(148, 57, 57);
+    padding: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 10px;
+}
+.fruit-container img{
+    width: 100%;
+}
+.fruit-container .name{
+    font-size: 20px;
+    font-weight: bold;
+}
+.fruit-container .price{
+    font-size: 18px;
+}
+.fruit-container button{
+    border: none;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    background-color: rgb(176, 92, 92);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.fruit-container button:hover{
+    transform: scale(1.03);
+    background-color: rgb(148, 57, 57)
+}
+
+@media (max-width:1024px)
+{
+    .fruit-container{
+        width: 200px;
+    }
+}
+
+@media (max-width:768px)
+{
+    .fruit-area{
+        padding: 0;
+    }
+    #fruit{
+        font-size: 40px;
+    }
+    .fruit-container{
+        width: 180px;
+        padding: 15px;
+        gap: 5px;
+        margin: 15px 8px;
+    }
+}
+
+@media (max-width:630px)
+{
+    .fruit-container{
+        width: 160px;
+        padding: 10px;
+        gap: 5px;
+        margin: 15px 8px;
+    }
+    .fruit-container .name{
+        font-size: 16px;
+    }
+    .fruit-container .price{
+        font-size: 14px;
+    }
+    .fruit-container button{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:390px)
+{
+    .fruit-container{
+        width: 130px;
+        padding: 5px;
+        gap: 2px;
+        margin: 15px 2px;
+    }
+    .fruit-container .name{
+        font-size: 14px;
+    }
+    .fruit-container .price{
+        font-size: 12px;
+    }
+    .fruit-container button{
+        width: 90px;
+        height: 26px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,180 @@
+
+.forget-area{
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+}
+.forget-container{
+    width: 360px;
+    margin-top: 70px;
+    padding-bottom: 20px;
+    box-shadow: 1px 1px 2px 2px grey;
+    border-radius: 5px;
+}
+.forget-container h1{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+.forget-input{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.forget-input>span .in{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 15px;
+    border: none;
+    outline: none;
+    border: 2px solid black;
+}
+.forget-img{
+    width: 400px;
+    height: auto;
+    margin-top: 50px;
+}
+.forget-img img{
+    width: 100%;
+}
+#hideshow{
+    margin: -25px 0px 0px 210px;
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.catch{
+    font-size: 13px;
+    color: red;
+    height: 10px;
+    margin:-12px 130px 0 0;
+}
+.forget-container button{
+    width: 200px;
+    height: 30px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    background-color: rgb(48, 150, 92);
+    cursor: pointer;
+    margin-top: 20px;
+}
+.forget-container button:hover{
+    background-color: rgb(19, 118, 62);
+}
+
+@media (max-width:1100px)
+{
+    .forget-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    .forget-container{
+        width: 350px;
+        margin-top: 30px;
+    }
+    .signup-img{
+        width: 350px;
+    }
+    .forget-input>span .in{
+        width: 270px;
+        height: 32px;
+    }
+    .catch{
+        width: 250px;
+        margin-left: 150px;
+    }
+}
+
+@media (max-width:850px)
+{
+    .forget-container{
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    }
+    .forget-container h1{
+        font-size: 26px;
+    }
+    .forget-img{
+        width: 310px;
+    }
+    .forget-input>span .in{
+        width: 240px;
+    }
+    .catch{
+        width: 200px;
+        margin-left: 110px;
+        font-size: 12px;
+    }
+    #hideshow{
+        margin: -25px 0px 0px 160px;
+        width: 50px;
+        height: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width:768px)
+{
+    .forget-area{
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+    .forget-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 280px;
+        margin-top: 60px;
+    }
+    .forget-img{
+        width: 260px;
+    }
+    .forget-input>span .in{
+        width: 220px;
+    }
+    .forget-container button{
+        width: 180px;
+        height: 30px;
+        border-radius: 5px;
+    }
+    .catch{
+        margin-left: 160px;
+    }
+}
+
+@media (max-width:600px)
+{
+    .forget-img{
+        display: none;
+    }
+    .forget-area{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin: 20px auto;
+    }
+    .forget-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+    #hideshow{
+       height: 26px;
+    }
+}

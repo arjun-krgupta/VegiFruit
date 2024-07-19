@@ -1,0 +1,163 @@
+/* Header */
+.searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0 8px 0;
+    width: 100%;
+}
+.searchbar>input{
+    max-width: 400px;
+    padding-left: 15px;
+    height: 30px;
+    outline: none;
+    font-size: 14px;
+    border-color: rgb(16, 16, 19);
+    border-radius: 5px;
+}
+.search-icon{
+    margin-left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(80, 141, 78);
+    height: 60px;
+    /* box-shadow: 3px 1px 1px 3px rgb(80, 141, 78); */
+}
+.logo{
+    margin-left: 60px;
+}
+.logo a h1{
+    color:white;
+    font-size: 40px;
+}
+.menu{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 25px;
+  margin-right: 60px;
+}
+.menu a{
+    color: white;
+    font-size: 16px;
+    padding: 17px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.menu a:hover{
+    background-color: rgb(87, 146, 92);
+}
+.login-cart {
+    display: flex;
+    gap: 30px;
+    margin-right: 60px;
+}
+.login-cart a{
+    color: white;
+}
+.login-cart a i{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.login-cart span{
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    right: 53px;
+    top: 50px;
+}
+.logo .togle{
+    display: none;
+}
+
+@media (max-width:1000px)
+{
+    .logo {
+        margin-left:40px
+    }
+    .logo a h1{
+        font-size: 30px;
+    }
+    .menu{
+        gap: 10px;
+    }
+    .menu a{
+        font-size: 16px;
+        padding: 16px;
+    }
+    .login-cart{
+        margin-right: 25px;
+    }
+    .login-cart span{
+        margin-right: -33px;
+    }
+}
+
+@media (max-width:768px)
+{
+    .logo .togle{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        font-size: 25px;
+        color: white;
+        cursor: pointer;
+    }
+    .menu{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 97px;
+        width: 200px;
+        height: 100vh;
+        background-color: rgb(80, 141, 78);
+    }
+    .menu a{
+        display: block;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+    .active{
+        display: block;
+    }
+    .login-cart{
+        margin-right: 70px;
+        gap: 15px;
+    }
+    .login-cart span{
+        margin-right: 10px;
+    }
+    .logo a h1{
+        font-size: 27px;
+    }
+    .login-cart a{
+        font-size: 16px;
+    }
+
+}
+@media (max-width:400px)
+{
+    .logo a h1{
+        font-size: 20px;
+        margin-left: -23px;
+    }
+    .logo .togle{
+        font-size: 20px;
+        right: 10px;
+    }
+    .login-cart a i{
+        font-size: 15px;
+        margin-right: 5px;
+    }
+}
+
