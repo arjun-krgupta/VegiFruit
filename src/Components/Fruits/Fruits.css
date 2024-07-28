@@ -1,8 +1,4 @@
-#fruit{
-    font-size: 50px;
-    text-align: center;
-    margin: 30px 0;
-}
+
 .fruit-area{
     display: flex;
     justify-content:center;
@@ -62,9 +58,6 @@
 {
     .fruit-area{
         padding: 0;
-    }
-    #fruit{
-        font-size: 40px;
     }
     .fruit-container{
         width: 180px;

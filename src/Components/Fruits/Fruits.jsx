@@ -6,7 +6,7 @@ import './Fruits.css'
 function Fruits() {
     return (
         <>
-        <h1 id='fruit' className='font-bold'>Fruits</h1>
+        <h1 className='font-bold text-4xl text-center mt-12 lg:text-5xl '>Fruits</h1>
         <div className="fruit-area">
         {
             fruitData.map((val,ind)=>
