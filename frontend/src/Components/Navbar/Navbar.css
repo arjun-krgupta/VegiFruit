@@ -58,7 +58,7 @@
 .login-cart {
     display: flex;
     gap: 30px;
-    margin-right: 60px;
+    margin-right: 50px;
 }
 .login-cart a{
     color: white;
@@ -71,7 +71,7 @@
     color: white;
     font-size: 18px;
     position: absolute;
-    right: 53px;
+    right: 42px;
     top: 50px;
 }
 .logo .togle{
@@ -97,7 +97,7 @@
         margin-right: 25px;
     }
     .login-cart span{
-        margin-right: -33px;
+        margin-right: -25px;
     }
 }
 
@@ -131,10 +131,10 @@
     }
     .login-cart{
         margin-right: 70px;
-        gap: 15px;
+        gap: 20px;
     }
     .login-cart span{
-        margin-right: 10px;
+        margin-right: 20px;
     }
     .logo a h1{
         font-size: 27px;
