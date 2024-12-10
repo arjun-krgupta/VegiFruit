@@ -39,14 +39,8 @@
     padding-left: 15px;
     border:none;
     outline: none;
-    border: 2px solid rgb(72, 66, 66);
+    border: 2px solid black;
     font-size: 15px;
-}
-.hide-show #hide{
-   margin: -10px -170px 0 0;
-   width: 60px;
-   height: 20px;
-   font-size: 12px;
 }
 .signup button{
     width: 200px;
@@ -60,10 +54,11 @@
     margin-top: 2px;
 }
 .err{
-    margin-right: 160px;
+    margin-left: -110px;
     color: red;
     font-size: 14px;
-    margin-top: -5px;
+    margin-top: -10px;
+    margin-bottom: 5px;
     height: 10px;
 }
 

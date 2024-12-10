@@ -43,7 +43,7 @@ function Navbar() {
                 <Link to='fruit'>Fruits</Link>
                 <Link to='vegetable'>Vegetables</Link>
                 <Link to='/contact'>Contact</Link>
-            </div>
+            </div> 
             <div className=" text-white pe-8 md:pe-10 lg:pe-16">
             <Link to='/signup' onClick={logout}>Logout</Link>
             </div>

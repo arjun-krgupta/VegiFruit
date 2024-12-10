@@ -5,18 +5,17 @@ import { Link, useNavigate} from 'react-router-dom';
 
 function Login(props) {
     const navigate=useNavigate()
-    const[show,showPass]=useState({type:'password',btnText:"show"})
-    // Password hide show
-     const hideShow=()=>
+    // hide show
+    const[pass,setPass]=useState({type:"password",className:"fa-solid fa-eye-slash cursor-pointer"})
+    const hideShow=()=>{
+        if((pass.type)==="password")
         {
-            if((show.type)==="password")
-                {
-                    showPass({type:'text',btnText:"hide"})
-                }
-                else{
-                    showPass({type:'password',btnText:"show"})
-                }
+            setPass({type:"text",className:"fa-solid fa-eye cursor-pointer"})
         }
+        else{
+            setPass({type:"password",className:"fa-solid fa-eye-slash cursor-pointer"})
+        }
+    }
 
         useEffect(()=>
         {
@@ -57,13 +56,11 @@ function Login(props) {
          <div className="login-input">
             <input type="email" className='input-text' placeholder='arjun@gmail.com' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} id='mail' />
 
-            <span>
-                <input type={show.type} placeholder='*********' className='input-text' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} id='pass'/>
-                </span>
+            <div className='flex justify-between items-center border-2 border-black px-1 w-[350px] h-[40px] rounded-[10px]'>
+                <input type={pass.type} placeholder='*********' className='border-0 outline-none text-[15px] ps-3' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} id='pass'/>
+                <i className={pass.className} onClick={hideShow}></i>
+                </div>
          </div>
-         <div className="hide-show">
-            <button onClick={hideShow}>{show.btnText}</button>
-            </div>
          <div className="password">
             <div className="check">
             <input type="checkbox" className='cursor-pointer'/> <span>Remember me</span>
