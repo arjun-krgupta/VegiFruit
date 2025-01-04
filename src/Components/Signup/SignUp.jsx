@@ -1,161 +1,161 @@
-import React, { useState } from 'react';
+import React, {useState } from 'react';
 import './SignUp.css'
 import signup from '../Assets/signup.jpg'
 
 function SignUp(props) {
-    const[show,showPass]=useState({type:'password',btnText:'show'})
-     const hideShow=()=>
+    const[pass,setPass]=useState({type:"password",className:"fa-solid fa-eye-slash cursor-pointer"})
+    const hideShow=()=>{
+        if((pass.type)==="password")
         {
-            if((show.type)==="password")
-                {
-                    showPass({type:'text',btnText:"hide"})
-                }
-                else{
-                    showPass({type:'password',btnText:"show"})
-                }
+            setPass({type:"text",className:"fa-solid fa-eye cursor-pointer"})
         }
-    const[state,setState]=useState(
-        {
-            name:'',email:'',mobile:'',pass:'',cnfpass:""
+        else{
+            setPass({type:"password",className:"fa-solid fa-eye-slash cursor-pointer"})
         }
-    )
-    const handler=(e)=>
-        {
-             setState({...state,[e.target.name] : e.target.value})
-        }
-        
-        const[nameMsg,setNameMsg]=useState('')
-        const[emailMsg,setEmailMsg]=useState('')
-        const[numberMsg,setNumberMsg]=useState('')
-        const[passMsg,setPassMsg]=useState('')
-        const[cnfPassMsg,setCnfpassMsg]=useState('')
-        const submitData=()=>
-        {
-            const{name,email,pass,mobile,cnfpass}=state
-            console.log(state);
-            // alert("Register Successfully")
+    }
 
-        var alphaExp = /^[a-zA-Z\s]+$/
-        var numExp = /^[0-9]*$/
-        var emailExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-        var passExp = /^([a-zA-Z0-9@*#]{8,15})$/
+        const[name,setName]=useState("")
+        const[email,setEmail]=useState("")
+        const[password,setPassword]=useState("")
+        const[cnfPassword,setCnfPassword]=useState("")
+        const[phone,setPhone]=useState("")
 
-        // name
-        if(name==="")
-            {
-                setNameMsg("Please Enter username")
-                document.querySelector('#name').focus();
-                return false
-            }
-            else if(!alphaExp.test(name))
+        // form validation
+        const[nameMsg,setNameMSg]=useState("")
+        const[emailMsg,setEmailMSg]=useState("")
+        const[numberMsg,setNumberMSg]=useState("")
+        const[passwordMsg,setPasswordMSg]=useState("")
+        const[cnfpasswordMsg,setCnfPasswordMSg]=useState("")
+
+
+        const getData=async ()=>
+        {
+            let name=document.querySelector("#name").value
+            let email=document.querySelector("#email").value
+            let number=document.querySelector("#number").value
+            let password=document.querySelector("#pass").value
+            let cnfPassword=document.querySelector("#cnfpass").value
+                var nameExp = /^[a-zA-Z\s]+$/
+                var passExp = /^([a-zA-Z0-9@*#]{8,15})$/
+                var numExp = /^[0-9]*$/
+                var emailExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+                    // name
+                if(name=="")
                 {
-                    setNameMsg("Name should be alphabet only ")
-                    document.querySelector('#name').focus();
+                    setNameMSg("Please enter name")
+                    document.querySelector("#name").focus()
+                    return false
+                }
+                else if(!name.match(nameExp))
+                {
+                    setNameMSg("Name should be valid only.")
+                    document.querySelector("#name").focus()
                     return false
                 }
                 else{
-                    setNameMsg("")
+                    setNameMSg("")
                 }
-    // email
-    if(email==="")
-        {
-            setEmailMsg("Please enter Email id")
-            document.querySelector('#email').focus();
-            return false
-        }
-        else if(!emailExp.test(email))
-            {
-                setEmailMsg("Email should be correct")
-                document.querySelector('#email').focus();
-                return false
-            }
-            else{
-                setEmailMsg("")
-            } 
-    // Number
-    if(mobile==="")
-        {
-        setNumberMsg("Please enter mobile number")
-        document.querySelector('#num').focus();
-        return false
-        }
-        else if(!numExp.test(mobile))
-        {
-            setNumberMsg("Number should be numeric only")
-            document.querySelector('#num').focus();
-            return false
-        }
-        else if(mobile.length<10 || mobile.length>10)
-            {
-                setNumberMsg("Number Should be 10 digit only")
-                document.querySelector('#num').focus();
-                return false
-            }
-            else{
-                setNumberMsg("")
-            }
-            // password
-    if(pass==="")
-        {
-            setPassMsg("Please enter password")
-            document.querySelector('#pass').focus();
-            return false
-        }
-        else if(!passExp.test(pass))
-            {
-                setPassMsg("Password should be 8 to 15 character")
-                document.querySelector('#pass').focus();
-                return false
-            }
-            else{
-                setPassMsg("")
-            }
-            // cnfpassword
-            if(cnfpass==="")
-                {
-                    setCnfpassMsg("Please enter confirm password")
-                    document.querySelector('#cnfpass').focus();
-                    return false
-                }
-                else if(cnfpass!==pass)
+                   // Email
+                   if(email=="")
                     {
-                        setCnfpassMsg("Password should not be Match")
-                        document.querySelector('#cnfpass').focus();
+                        setEmailMSg("Please enter email")
+                        document.querySelector("#email").focus()
+                        return false
+                    }
+                    else if(!email.match(emailExp))
+                    {
+                        setEmailMSg("Email should be valid only.")
+                        document.querySelector("#email").focus()
                         return false
                     }
                     else{
-                        setCnfpassMsg("")
+                        setEmailMSg("")
                     }
-        }
+                    // number
+                   if(number=="")
+                    {
+                        setNumberMSg("Please enter number")
+                        document.querySelector("#number").focus()
+                        return false
+                    }
+                    else if(!number.match(numExp))
+                    {
+                        setNumberMSg("Number should be Numeric Only.")
+                        document.querySelector("#number").focus()
+                        return false
+                    }
+                    else if(number.length<10 || number.length>10)
+                    {
+                        setNumberMSg("Number should be 10 digits.")
+                        document.querySelector("#number").focus()
+                        return false
+                    }
+                    else{
+                        setNumberMSg("")
+                    }
+                     // Password
+                   if(password=="")
+                    {
+                        setPasswordMSg("Please enter Password")
+                        document.querySelector("#pass").focus()
+                        return false
+                    }
+                    else if(!password.match(passExp))
+                    {
+                        setPasswordMSg("Password should be 8 to 15 character.")
+                        document.querySelector("#pass").focus()
+                        return false
+                    }
+                    else{
+                        setPasswordMSg("")
+                    }
+                    // Confirm Password
+                    if(cnfPassword=="")
+                    {
+                        setCnfPasswordMSg("Please enter confirm password")
+                        document.querySelector("#cnfpass").focus()
+                        return false
+                    }
+                    else if(cnfPassword!=password)
+                    {
+                        setCnfPasswordMSg("Password doesn't match")
+                        document.querySelector("#cnfpass").focus()
+                        return false
+                    }
+                    else{
+                        setCnfPasswordMSg("")
+                    }
 
+               console.log(name,email,phone,password,cnfPassword)
+        }
+        
     return (
         <>
         <div className="signup-container">
         <div className="signup">
             <h1 className='font-bold'>Sign Up</h1>
         <div className="input-area">
-                <input type="text" placeholder='arjun' className='inp' name='name' value={state.name} onChange={handler} id='name' />
+                <input type="text" placeholder='arjun' className='inp' name='name' value={name} onChange={(e)=>setName(e.target.value)} id='name' />
                 <div className='err'>{nameMsg}</div>
 
-                <input type="Email" placeholder='arjun@gmail.com' className='inp' name='email' value={state.email} onChange={handler} id='email'/>
+                <input type="Email" placeholder='arjun@gmail.com' className='inp' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} id='email'/>
                 <div className='err'>{emailMsg}</div>
 
-                <input type="number" placeholder='+91xxxxxxxxx.' className='inp' name='mobile' value={state.mobile} onChange={handler} id='num'/>
+                <input type="text" placeholder='+91xxxxxxxxx.' className='inp' name='mobile' value={phone} onChange={(e)=>setPhone(e.target.value)} id='number'/>
                 <div className='err'>{numberMsg}</div>
 
-                <span>
-                <input type={show.type} placeholder='*********' className='inp' name='pass' value={state.pass} onChange={handler} id='pass'/>
-                </span>
-                <div className='err'>{passMsg}</div>
-                
-                <div className="hide-show">
-                <button onClick={hideShow} id='hide'>{show.btnText} </button>
+                <div className='flex justify-between items-center border-2 border-black px-1 w-[290px] h-[36px] rounded-[5px]'>
+                    <input type={pass.type} placeholder='password' name='pass' className='border-0 outline-none text-[15px] ps-3' id='pass' value={password} onChange={(e)=>setPassword(e.target.value)} />
+                    <i className={pass.className} onClick={hideShow}></i>
                 </div>
+                <div className='err'>{passwordMsg}</div>
+                
 
-                <input type="password" placeholder='confirm password' className='inp' name='cnfpass' value={state.cnfpass} onChange={handler} id='cnfpass'/>
-                <div className='err'>{cnfPassMsg}</div>
+                <input type="password" placeholder='confirm password' className='inp' name='cnfpass' value={cnfPassword} onChange={(e)=>setCnfPassword(e.target.value)} id='cnfpass'/>
+                <div className='err'>{cnfpasswordMsg}</div>
 
-            <button onClick={submitData}>Register</button>
+            <button onClick={getData} type='button' >Register</button>
             </div>
             </div>
             <div className="signup-img">

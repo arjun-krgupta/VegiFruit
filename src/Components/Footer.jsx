@@ -5,7 +5,7 @@ import logo from '../Components/Assets/logo.png'
 function Footer(props) {
     return (
     <>
-    <div className='bg-[#508D4E] mt-10'>
+    <div className='bg-[#508D4E] mb-0 '>
     <div className="flex justify-around pt-4 gap-3 text-white mt-5">
         <div className="hidden sm:flex flex-col gap-1 w-64 lg:w-72">
             <h2 className='font-bold text-sm lg:text-xl'>About Us</h2>
@@ -41,12 +41,12 @@ function Footer(props) {
     </div>
     <hr className='bg-white m-2 mx-auto w-full'/>
     <div className='flex-col flex items-center  text-white gap-2'>
-        <p className='ms-2 text-[10px] sm:text-sm'>Copyright &#169;2024 All rights reserved | This website is made by <span className='text-xs sm:text-base text-black'>Arjun kumar</span></p>
+        <p className='ms-2 text-[10px] sm:text-sm'>Copyright &#169;2024 All rights reserved | This website is made by <span className='text-xs sm:text-base text-black font-semibold'>Arjun kumar</span></p>
         <div className='flex gap-3 mb-2 text-base sm:text-xl'>
-        <Link to='https:www.facebook.com'><i class="fa-brands fa-facebook"></i></Link>
-        <Link to='https://www.linkedin.com/in/arjunkrgupta/'><i class="fa-brands fa-linkedin"></i></Link>
-        <Link to='https://github.com/arjun-krgupta'><i class="fa-brands fa-github"></i></Link>
-        <Link to='https:www.instagram.com'><i class="fa-brands fa-square-instagram"></i></Link>     
+        <Link to='https:www.facebook.com'><i className="fa-brands fa-facebook"></i></Link>
+        <Link to='https://www.linkedin.com/in/arjunkrgupta/'><i className="fa-brands fa-linkedin"></i></Link>
+        <Link to='https://github.com/arjun-krgupta'><i className="fa-brands fa-github"></i></Link>
+        <Link to='https:www.instagram.com'><i className="fa-brands fa-square-instagram"></i></Link>     
         </div>
     </div>
     </div>

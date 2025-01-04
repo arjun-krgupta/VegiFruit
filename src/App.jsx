@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {Route,Routes } from 'react-router-dom';
 import Home from './Components/Home/Home'
 import Navbar from './Components/Navbar/Navbar'
@@ -13,25 +13,26 @@ import Forget from './Components/Forget/Forget';
 import Service from './Components/Services/Service';
 import NotFound from '../src/Components/NotFound'
 import Cart from './Components/Cart';
-// import Slider from './Components/Slider';
+// import PrivateComponent from './Components/PrivateComponent';
 
 function App(props) {
     return (
         <>
         <Navbar/>
         <Routes>
-         <Route path='/' element={<Home/>} ></Route>
-         <Route path='/about' element={<About/>}></Route>
-         <Route path='/fruit' element={<Fruits/>}></Route>
-         <Route path='/vegetable' element={<Vegetable/>}></Route>
-         <Route path='/contact' element={<Contact/>}></Route>
-         <Route path='/login' element={<Login/>}></Route>
-         <Route path='/signup' element={<SignUp/>}></Route>
-         <Route path='/forget' element={<Forget/>}></Route>
-         <Route path='/service' element={<Service/>}></Route>
-         <Route path='/cart' element={<Cart/>}></Route>
-         <Route path='*' element={<NotFound/>}></Route>
-         {/* <Route path='/slider' element={<Slider/>}></Route> */}
+        {/* <Route element={<PrivateComponent/>}> */}
+         <Route path='/' element={<Home/>}  />
+         <Route path='/about' element={<About/>} />
+         <Route path='/fruit' element={<Fruits/>} />
+         <Route path='/vegetable' element={<Vegetable/>} />
+         <Route path='/contact' element={<Contact/>} />
+         <Route path='/forget' element={<Forget/>} />
+         <Route path='/service' element={<Service/>} />
+         <Route path='/cart' element={<Cart/>} />
+         <Route path='*' element={<NotFound/>} />
+         {/* </Route> */}
+         <Route path='/signup' element={<SignUp/>} />
+         <Route path='/login' element={<Login/>} />
         </Routes>
         <Footer/>
         
