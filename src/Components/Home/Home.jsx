@@ -8,7 +8,6 @@ import 'react-multi-carousel/lib/styles.css';
 import fruitData from '../Fruits/AllFruitData';
 import vegiData from '../Vegetable/AllVegiData';
 import Service from '../Services/Service';
-// import Slider from '../Slider';
 
 function Home(props) {
     const responsive = {
@@ -59,7 +58,7 @@ function Home(props) {
                     <img src={val.img} alt="" />
                     <p className='fruit-name'>{val.name}</p>
                     <p className='fruit-price'>Price : {val.price}</p>
-                    <button>Add to Cart</button>
+                    <button onClick={()=>props.addToCartHandler({name:val.name,img:val.img,price:val.price})}>Add to Cart</button>
                   </div>
                 )}
             </Carousel>
@@ -74,7 +73,7 @@ function Home(props) {
                     <img src={val.img} alt="" />
                     <p className='vegi-name'>{val.name}</p>
                     <p className='vegi-price'>Price : {val.price}</p>
-                    <button>Add to Cart</button>
+                    <button onClick={()=>props.addToCartHandler({name:val.name,img:val.img,price:val.price})}>Add to Cart</button>
                   </div>
                 )}
             </Carousel>

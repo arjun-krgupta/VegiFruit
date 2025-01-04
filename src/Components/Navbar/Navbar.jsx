@@ -12,14 +12,7 @@ $(function()
 })
 })
 
-function Navbar() {
-  // const auth=localStorage.getItem("user")
-  // const navigate=useNavigate()
-  // const logout=()=>
-  // {
-  //   localStorage.clear()
-  //   navigate('/signup')
-  // }
+function Navbar(props) {
   return (
     <>
       <header>
@@ -43,8 +36,9 @@ function Navbar() {
             <div className="login-cart text-lg">
               <Link to='/signup'>SignUp</Link>
               <Link to='/login'>Login</Link>
-              <Link to='/cart'><i className="fa-solid fa-bag-shopping cart"></i></Link>
-              <span className="cart-count">0</span>
+              <Link to='/cart'><i className="fa-solid fa-bag-shopping cart"></i>
+              <span className="cart-count">{props.data.length}</span>
+              </Link>
             </div>
         </nav>
       </header>

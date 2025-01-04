@@ -13,7 +13,7 @@ function Vegetable(props) {
                <img src={val.img} alt="" />
                <p className='name'>{val.name}</p>
                <p className='price'>Price : {val.price}</p>
-               <button>Add to Cart</button>
+               <button onClick={()=>props.addToCartHandler({name:val.name,img:val.img,price:val.price})}>Add to Cart</button>
             </div>
             
             )
