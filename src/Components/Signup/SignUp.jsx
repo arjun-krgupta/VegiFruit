@@ -41,7 +41,7 @@ function SignUp(props) {
                 var emailExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
                     // name
-                if(name=="")
+                if(name==="")
                 {
                     setNameMSg("Please enter name")
                     document.querySelector("#name").focus()
@@ -57,7 +57,7 @@ function SignUp(props) {
                     setNameMSg("")
                 }
                    // Email
-                   if(email=="")
+                   if(email==="")
                     {
                         setEmailMSg("Please enter email")
                         document.querySelector("#email").focus()
@@ -73,7 +73,7 @@ function SignUp(props) {
                         setEmailMSg("")
                     }
                     // number
-                   if(number=="")
+                   if(number==="")
                     {
                         setNumberMSg("Please enter number")
                         document.querySelector("#number").focus()
@@ -95,7 +95,7 @@ function SignUp(props) {
                         setNumberMSg("")
                     }
                      // Password
-                   if(password=="")
+                   if(password==="")
                     {
                         setPasswordMSg("Please enter Password")
                         document.querySelector("#pass").focus()
@@ -111,13 +111,13 @@ function SignUp(props) {
                         setPasswordMSg("")
                     }
                     // Confirm Password
-                    if(cnfPassword=="")
+                    if(cnfPassword==="")
                     {
                         setCnfPasswordMSg("Please enter confirm password")
                         document.querySelector("#cnfpass").focus()
                         return false
                     }
-                    else if(cnfPassword!=password)
+                    else if(cnfPassword!==password)
                     {
                         setCnfPasswordMSg("Password doesn't match")
                         document.querySelector("#cnfpass").focus()

@@ -8,8 +8,17 @@ import 'react-multi-carousel/lib/styles.css';
 import fruitData from '../Fruits/AllFruitData';
 import vegiData from '../Vegetable/AllVegiData';
 import Service from '../Services/Service';
+// import { useDispatch } from 'react-redux';
+// import { addCart } from '../../redux/features/cartSlice';
+
 
 function Home(props) {
+  // const dispatch=useDispatch();
+
+  // // add to cart
+  // const send=(e)=>{
+  //    dispatch(addCart(e))
+  // }
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -53,12 +62,12 @@ function Home(props) {
         <div className="fruit">
             <h1 className='heading font-bold text-[35px] md:text-[50px] '>Fruits</h1>
             <Carousel responsive={responsive}>
-                {fruitData.map((val,ind)=>
-                  <div className="fruit-item" key={ind}>
+                {fruitData.map((val,i)=>
+                  <div className="fruit-item" key={i}>
                     <img src={val.img} alt="" />
                     <p className='fruit-name'>{val.name}</p>
                     <p className='fruit-price'>Price : {val.price}</p>
-                    <button onClick={()=>props.addToCartHandler({name:val.name,img:val.img,price:val.price})}>Add to Cart</button>
+                    {/* <button onClick={()=>send(val)}>Add to Cart</button> */}
                   </div>
                 )}
             </Carousel>
@@ -68,16 +77,16 @@ function Home(props) {
         <div className="vegi">
             <h1 className='heading font-bold text-[35px] md:text-[50px]'>Vegetables</h1>
             <Carousel responsive={responsive}>
-                {vegiData.map((val,ind)=>
+                {vegiData.map((el,ind)=>
                   <div className="vegi-item" key={ind}>
-                    <img src={val.img} alt="" />
-                    <p className='vegi-name'>{val.name}</p>
-                    <p className='vegi-price'>Price : {val.price}</p>
-                    <button onClick={()=>props.addToCartHandler({name:val.name,img:val.img,price:val.price})}>Add to Cart</button>
+                    <img src={el.img} alt="" />
+                    <p className='vegi-name'>{el.name}</p>
+                    <p className='vegi-price'>Price : {el.price}</p>
+                    {/* <button onClick={()=>send(el)}>Add to Cart</button> */}
                   </div>
                 )}
             </Carousel>
-            <Link to='/Vegetable' className='see-all'>See all</Link>
+            <Link to='/vegetable' className='see-all'>See all</Link>
         </div>
         </>
     );

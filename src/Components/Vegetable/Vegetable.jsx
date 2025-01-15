@@ -1,19 +1,28 @@
 import React from 'react';
 import './Vegetable.css'
 import vegiData from './AllVegiData';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../../redux/features/cartSlice';
 
 function Vegetable(props) {
+    const dispatch=useDispatch();
+
+    // add to cart
+    const send=(e)=>{
+       dispatch(addCart(e))
+    }
+
     return (
         <>
        <h1 id='vegi' className='font-bold'>Vegetables</h1>
         <div className="vegi-area">
         {
-            vegiData.map((val,ind)=>
-            <div className="vegi-container" key={ind}>
-               <img src={val.img} alt="" />
-               <p className='name'>{val.name}</p>
-               <p className='price'>Price : {val.price}</p>
-               <button onClick={()=>props.addToCartHandler({name:val.name,img:val.img,price:val.price})}>Add to Cart</button>
+            vegiData.map((data,index)=>
+            <div className="vegi-container" key={index}>
+               <img src={data.img} alt="" />
+               <p className='name'>{data.name}</p>
+               <p className='price'>Price : {data.price}</p>
+               <button onClick={()=>send(data)}>Add to Cart</button>
             </div>
             
             )

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css'
 import $ from 'jquery'
+import { useSelector } from "react-redux";
 
 $(function()
 {
@@ -13,6 +14,7 @@ $(function()
 })
 
 function Navbar(props) {
+  const {cartItem}=useSelector((state)=>state.allCart)
   return (
     <>
       <header>
@@ -27,17 +29,17 @@ function Navbar(props) {
               <Link to='/'><h1 className="font-bold">VegiFruit</h1></Link>
               <i className="fa-solid fa-bars togle"></i>
             </div>
-              <div className="hidden md:flex items-center gap-x-10 text-lg text-white">
+              <div className="hidden menu md:flex items-center gap-x-10 text-lg text-white">
                 <Link to='/'>Home</Link>
-                <Link to='fruit'>Fruits</Link>
-                <Link to='vegetable'>Vegetables</Link>
+                <Link to='/fruit'>Fruits</Link>
+                <Link to='/vegetable'>Vegetables</Link>
                 <Link to='/contact'>Contact</Link>
             </div> 
             <div className="login-cart text-lg">
               <Link to='/signup'>SignUp</Link>
               <Link to='/login'>Login</Link>
               <Link to='/cart'><i className="fa-solid fa-bag-shopping cart"></i>
-              <span className="cart-count">{props.data.length}</span>
+              <span className="cart-count">{cartItem.length}</span>
               </Link>
             </div>
         </nav>

@@ -7,23 +7,23 @@ import Login from './Components/Login/Login'
 import Contact from './Components/Contact/Contact'
 import Forget from './Components/Forget/Forget';
 import Service from './Components/Services/Service';
-import NotFound from '../src/Components/NotFound'
-import HomeContainer from './Container/HomeContainer';
-import NavbarContainer from './Container/NavbarContainer';
-import VegiContainer from './Container/VegiContainer';
-import FruitContainer from './Container/FruitContainer';
-import Cart from './Components/Cart';
+import NotFound from './Components/NotFound'
+import Home from './Components/Home/Home';
+import Fruits from './Components/Fruits/Fruits'
+import Navbar from './Components/Navbar/Navbar'
+import Vegetable from './Components/Vegetable/Vegetable'
+import Cart from './Components/Cart'
 
 function App(props) {
     return (
         <>
         <BrowserRouter>
-        <NavbarContainer/>
+        <Navbar/>
         <Routes>
-         <Route path='/' element={<HomeContainer/>}  />
+         <Route path='/' element={<Home/>}  />
          <Route path='/about' element={<About/>} />
-         <Route path='/fruit' element={<FruitContainer/>} />
-         <Route path='/vegetable' element={<VegiContainer/>} />
+         <Route path='/fruit' element={<Fruits />} />
+         <Route path='/vegetable' element={<Vegetable/>} />
          <Route path='/contact' element={<Contact/>} />
          <Route path='/forget' element={<Forget/>} />
          <Route path='/service' element={<Service/>} />
