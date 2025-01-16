@@ -1,113 +1,49 @@
-import React, { useState,useEffect, useRef } from "react";
-import { FaSearch } from "react-icons/fa";
-import { FaCartPlus } from "react-icons/fa6";
-import { Badge } from "@material-tailwind/react";
-import { FaBarsStaggered } from "react-icons/fa6";
-import { FaXmark } from "react-icons/fa6";
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import './Navbar.css'
+import $ from 'jquery'
+import { useSelector } from "react-redux";
 
-function Navbar() {
-  const redirect=useNavigate()
+$(function()
+{
+    $(".togle").on("click",function()
+{
+    $(".menu").slideToggle('active')
+    $('.togle').toggleClass('fa-xmark')
+})
+})
+
+function Navbar(props) {
   const {cartItem}=useSelector((state)=>state.allCart)
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [menuOpen,setMenuOpen]=useState(false)
-  const menuRef = useRef(null);
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
-
-  const toggleMenu=()=>
-  {
-    setMenuOpen(!menuOpen)
-  }
-
- // Close the menu when clicking outside
- useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setMenuOpen(false);
-    }
-  };
-
-  // Add event listener to detect clicks outside the menu
-  document.addEventListener("mousedown", handleClickOutside);
-
-  return () => {
-    // Clean up event listener
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, []);
-
   return (
     <>
-      <div className=" flex justify-between items-center bg-green-800 text-white h-[70px] px-5 sm:px-6 lg:px-16">
-        {/* Logo */}
-       <div className="flex gap-3 sm:gap-4">
-       <button onClick={toggleMenu} className="md:hidden">
-        { menuOpen ? <FaXmark className="text-2xl sm:text-3xl text-white" />
-        : <FaBarsStaggered className="text-2xl sm:text-3xl text-white"/>
-        }
-       </button>
-       <h1 className=" text-xl sm:text-2xl lg:text-3xl font-semibold uppercase cursor-pointer" onClick={()=>redirect('/')}>VegiFruit</h1>
-       </div>
-
-        {/* dextop Menu */}
-            <div className="hidden md:flex gap-5 lg:gap-8 items-center text-base font-medium uppercase">
-            <a href="/">Home</a>
-            <a href="/fruit">Fruit</a>
-            <a href="/vegi">Vegetable</a>
-            <a href="/about">Shop</a>
+      <header>
+        {/* header */}
+          <div className="searchbar">
+            <input type="text" placeholder="search..." className="border-2" />
+            <i className="fa-solid fa-magnifying-glass search-icon"></i>
           </div>
-
-        {/* Cart & Authentication */}
-        <div className="flex gap-4 sm:gap-6 items-center text-[13px] sm:text-base uppercase font-medium">
-          {/* Search */}
-          <div className="flex items-center">
-          <FaSearch
-              className="text-lg sm:text-xl cursor-pointer"
-              onClick={toggleSearch}
-            />
-            {isSearchOpen && (
-              <input
-                type="text"
-                className="absolute top-[72px] right-4 sm:right-2 ps-3 py-2 rounded text-white bg-green-800 focus:outline-none focus:ring-1 focus:ring-green-800 transition-all duration-200 w-[94%] 
-                sm:w-[280px] text-sm placeholder:text-sm placeholder:text-white"
-                placeholder="Search..."
-              />
-            )}
-          </div>
-
-          {/* Cart */}
-          <Badge content={cartItem.length} className="m-[-6px] sm:m-[-8px] bg-black" >
-            <FaCartPlus className="text-lg sm:text-xl cursor-pointer" onClick={()=>redirect('/cart')} />
-          </Badge>
-
-          {/* Login & Sign Up */}
-          <a href="/login" className="hover:text-green-400 transition">
-            Login
-          </a>
-          <a href="/signup" className="hover:text-green-400 transition">
-            Sign Up
-          </a>
-        </div>
-
-        {/* Mobile menu */}
-       {
-        menuOpen && 
-        <div className="absolute left-0 top-[70px]  z-10 md:hidden">
-          <div className="h-[100vh] w-[150px] ps-5 pt-5 uppercase flex flex-col gap-5 text-white bg-black" 
-              ref={menuRef} >
-            <a href="/">Home</a>
-            <a href="/fruit">Fruit</a>
-            <a href="/vegi">Vegetable</a>
-            <a href="/about">Shop Now</a>
-          </div>
-       </div>
-       }
-
-      </div>
+        {/* Navbar */}
+        <nav className="navbar flex justify-between items-center w-full h-[60px]">
+            <div className="logo">
+              <Link to='/'><h1 className="font-bold">VegiFruit</h1></Link>
+              <i className="fa-solid fa-bars togle"></i>
+            </div>
+              <div className="hidden menu md:flex items-center gap-x-10 text-lg text-white">
+                <Link to='/'>Home</Link>
+                <Link to='/fruit'>Fruits</Link>
+                <Link to='/vegetable'>Vegetables</Link>
+                <Link to='/contact'>Contact</Link>
+            </div> 
+            <div className="login-cart text-lg">
+              <Link to='/signup'>SignUp</Link>
+              <Link to='/login'>Login</Link>
+              <Link to='/cart'><i className="fa-solid fa-bag-shopping cart"></i>
+              <span className="cart-count">{cartItem.length}</span>
+              </Link>
+            </div>
+        </nav>
+      </header>
     </>
   );
 }
